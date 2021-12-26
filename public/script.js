@@ -20,6 +20,7 @@ btn.addEventListener("click", () => {
     message: message.value,
   };
   socket.emit("chat:message", datos)
+  message.value = ""
 });
 
 message.addEventListener("keypress", () => {
@@ -46,5 +47,6 @@ message.addEventListener("keypress", (e) => {
             message: message.value,
           };
           socket.emit("chat:message", datos)
+          message.value = ""
     }
 })
